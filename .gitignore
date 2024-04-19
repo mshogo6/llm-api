@@ -1,0 +1,3 @@
+work/models/*
+!work/models/download.sh
+work/app/__pycache__/*

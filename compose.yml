@@ -1,0 +1,15 @@
+services:
+  llm-api:
+    container_name: 'python-llm-api-container'
+    hostname: 'python-llm-api-container'
+    build: .
+    shm_size: '16gb'
+    restart: always
+    working_dir: '/work' 
+    tty: true
+    volumes:
+      - type: bind
+        source: ./work
+        target: /work
+    ports:
+      - 7777:7777
