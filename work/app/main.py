@@ -28,9 +28,9 @@ app = FastAPI()
 async def llm(info: Info):
     ret_text = ''
     if info.llm_input_type == 'ai_assistant':
-        ret_text = llama_cpp_switch.call_llm_system_user_assistant(info.llm_type, info.text, info.max_tokens)
+        ret_text = llama_cpp_switch.call_llm_system_user_assistant(info.llm_type, info.text, info.max_tokens, info.end_texts)
     if info.llm_input_type == 'raw':
-        ret_text = llama_cpp_switch.call_llm(info.llm_type, info.text, info.max_tokens)
+        ret_text = llama_cpp_switch.call_llm(info.llm_type, info.text, info.max_tokens, info.end_texts)
     ret = {
         'text':ret_text
     }
