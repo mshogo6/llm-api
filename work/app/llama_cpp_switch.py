@@ -20,7 +20,7 @@ def call_llm(llm_type: str, text:str, max_tokens: int, end_texts: str):
     out_text : str
         返答テキスト
     """
-    llm = Llama(f'models/{llm_type}.gguf')
+    llm = Llama(f'/work/models/{llm_type}.gguf')
     output = llm(text, max_tokens=max_tokens, stop=end_texts, echo=True)
     out_text = output['choices'][0]['text']
     return out_text
@@ -46,7 +46,7 @@ def call_llm_system_user_assistant(llm_type: str, text:str, max_tokens: int, end
     out_text : str
         返答テキスト
     """
-    llm = Llama(f'models/{llm_type}.gguf')
+    llm = Llama(f'/work/models/{llm_type}.gguf')
     prompt = (
         '<|system|>\n'
         'You are an excellent AI assistant.\n'
