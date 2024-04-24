@@ -17,7 +17,6 @@ test_info = {
 print('post text')
 pprint.pprint(test_info, sort_dicts=False)
 ret = requests.post(url, json.dumps(test_info))
-print('this is', ret)
 ret_info = json.loads(ret.text)
 
 print('respons text')
